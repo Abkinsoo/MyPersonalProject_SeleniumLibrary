@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20230503 18:35:16.602" rpa="false" schemaversion="3">
+<suite id="s1" name="NewUser" source="C:\Users\Owner\PycharmProjects\MyPersonalProject_SeleniumLibrary\NewUser.robot">
+<kw name="Get to login page" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230503 18:35:17.914" level="INFO">Opening browser 'chrome' to base url 'https://parabank.parasoft.com/parabank/index.htm'.</msg>
+<status status="PASS" starttime="20230503 18:35:17.914" endtime="20230503 18:35:23.595"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230503 18:35:23.595" endtime="20230503 18:35:23.737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${APP_LOGO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230503 18:35:23.737" endtime="20230503 18:35:23.789"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CUSTOMER_LOGIN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230503 18:35:23.790" endtime="20230503 18:35:23.820"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:17.914" endtime="20230503 18:35:23.820"/>
+</kw>
+<test id="s1-t1" name="Verify that user can register on the website" line="12">
+<kw name="Click on register btn" library="keywords">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:23.822" level="INFO">Clicking link 'xpath://*[@id="loginPanel"]/p[2]/a'.</msg>
+<status status="PASS" starttime="20230503 18:35:23.822" endtime="20230503 18:35:24.242"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:23.821" endtime="20230503 18:35:24.243"/>
+</kw>
+<kw name="Enter firstname for new user" library="keywords">
+<kw name="First Name" library="FakerLibrary">
+<var>${firstname}</var>
+<msg timestamp="20230503 18:35:24.249" level="INFO">${firstname} = Matthew</msg>
+<status status="PASS" starttime="20230503 18:35:24.248" endtime="20230503 18:35:24.249"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${firstname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230503 18:35:24.250" level="INFO">Matthew</msg>
+<status status="PASS" starttime="20230503 18:35:24.250" endtime="20230503 18:35:24.250"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${firstname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230503 18:35:24.252" level="INFO">${firstname} = Matthew</msg>
+<status status="PASS" starttime="20230503 18:35:24.251" endtime="20230503 18:35:24.252"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRST_NAME_FIELD}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:24.253" level="INFO">Typing text 'Matthew' into text field 'id:customer.firstName'.</msg>
+<status status="PASS" starttime="20230503 18:35:24.252" endtime="20230503 18:35:24.408"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:24.247" endtime="20230503 18:35:24.408"/>
+</kw>
+<kw name="Enter lastname for new user" library="keywords">
+<kw name="Last Name" library="FakerLibrary">
+<var>${lastname}</var>
+<msg timestamp="20230503 18:35:24.408" level="INFO">${lastname} = Bradford</msg>
+<status status="PASS" starttime="20230503 18:35:24.408" endtime="20230503 18:35:24.408"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${lastname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230503 18:35:24.408" level="INFO">Bradford</msg>
+<status status="PASS" starttime="20230503 18:35:24.408" endtime="20230503 18:35:24.408"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${lastname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230503 18:35:24.408" level="INFO">${lastname} = Bradford</msg>
+<status status="PASS" starttime="20230503 18:35:24.408" endtime="20230503 18:35:24.408"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LAST_NAME_FIELD}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:24.408" level="INFO">Typing text 'Bradford' into text field 'id:customer.lastName'.</msg>
+<status status="PASS" starttime="20230503 18:35:24.408" endtime="20230503 18:35:24.540"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:24.408" endtime="20230503 18:35:24.540"/>
+</kw>
+<kw name="Input user address" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ADDRESS_FIELD}</arg>
+<arg>Ikenga Ogidi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:24.540" level="INFO">Typing text 'Ikenga Ogidi' into text field 'id:customer.address.street'.</msg>
+<status status="PASS" starttime="20230503 18:35:24.540" endtime="20230503 18:35:24.668"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CITY}</arg>
+<arg>Onitsha</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:24.671" level="INFO">Typing text 'Onitsha' into text field 'id:customer.address.city'.</msg>
+<status status="PASS" starttime="20230503 18:35:24.668" endtime="20230503 18:35:24.794"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${STATE}</arg>
+<arg>Anambra</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:24.794" level="INFO">Typing text 'Anambra' into text field 'id:customer.address.state'.</msg>
+<status status="PASS" starttime="20230503 18:35:24.794" endtime="20230503 18:35:24.959"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:24.540" endtime="20230503 18:35:24.959"/>
+</kw>
+<kw name="Input user zipcode, phone number and SSN" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ZIP_CODE}</arg>
+<arg>67543</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:24.959" level="INFO">Typing text '67543' into text field 'id:customer.address.zipCode'.</msg>
+<status status="PASS" starttime="20230503 18:35:24.959" endtime="20230503 18:35:25.071"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PHONE}</arg>
+<arg>07033481199</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:25.072" level="INFO">Typing text '07033481199' into text field 'id:customer.phoneNumber'.</msg>
+<status status="PASS" starttime="20230503 18:35:25.072" endtime="20230503 18:35:25.189"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SSN}</arg>
+<arg>1132-543</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:25.189" level="INFO">Typing text '1132-543' into text field 'id:customer.ssn'.</msg>
+<status status="PASS" starttime="20230503 18:35:25.189" endtime="20230503 18:35:25.308"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:24.959" endtime="20230503 18:35:25.308"/>
+</kw>
+<kw name="User to choose a username" library="keywords">
+<kw name="User Name" library="FakerLibrary">
+<var>${username}</var>
+<msg timestamp="20230503 18:35:25.308" level="INFO">${username} = sjohnson</msg>
+<status status="PASS" starttime="20230503 18:35:25.308" endtime="20230503 18:35:25.308"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230503 18:35:25.308" level="INFO">sjohnson</msg>
+<status status="PASS" starttime="20230503 18:35:25.308" endtime="20230503 18:35:25.308"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${username}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230503 18:35:25.308" level="INFO">${username} = sjohnson</msg>
+<status status="PASS" starttime="20230503 18:35:25.308" endtime="20230503 18:35:25.308"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:25.308" level="INFO">Typing text 'sjohnson' into text field 'id:customer.username'.</msg>
+<status status="PASS" starttime="20230503 18:35:25.308" endtime="20230503 18:35:25.428"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:25.308" endtime="20230503 18:35:25.428"/>
+</kw>
+<kw name="User to choose a Password" library="keywords">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${CONFIRM_PASSWORD_FIELD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password_field}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:25.428" level="INFO">Typing text 'id:customer.password' into text field 'id:customer.password'.</msg>
+<status status="PASS" starttime="20230503 18:35:25.428" endtime="20230503 18:35:25.575"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONFIRM_PASSWORD_FIELD}</arg>
+<arg>${confirm_password_field}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:25.575" level="INFO">Typing text 'id:repeatedPassword' into text field 'id:repeatedPassword'.</msg>
+<status status="PASS" starttime="20230503 18:35:25.575" endtime="20230503 18:35:25.713"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:25.428" endtime="20230503 18:35:25.713"/>
+</kw>
+<kw name="Click on the register button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${REGISTER_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230503 18:35:25.713" level="INFO">Clicking button 'xpath://*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input'.</msg>
+<status status="PASS" starttime="20230503 18:35:25.713" endtime="20230503 18:35:26.098"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:25.713" endtime="20230503 18:35:26.099"/>
+</kw>
+<status status="PASS" starttime="20230503 18:35:23.820" endtime="20230503 18:35:26.102"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230503 18:35:26.109" endtime="20230503 18:35:28.517"/>
+</kw>
+<doc>Register new user on the website</doc>
+<status status="PASS" starttime="20230503 18:35:16.602" endtime="20230503 18:35:28.517"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="NewUser">NewUser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
